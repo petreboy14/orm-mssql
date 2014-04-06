@@ -4,7 +4,7 @@
   "description": "An ORM interface to MSSQL",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/lab/bin/lab"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,14 @@
   "bugs": {
     "url": "https://github.com/petreboy14/orm-mssql/issues"
   },
-  "homepage": "https://github.com/petreboy14/orm-mssql"
+  "homepage": "https://github.com/petreboy14/orm-mssql",
+  "devDependencies": {
+    "precommit-hook": "^0.3.10",
+    "lab": "^3.0.0",
+    "should": "^3.2.0"
+  },
+  "dependencies": {
+    "tedious": "^0.2.2",
+    "tedious-connection-pool": "^0.1.1"
+  }
 }
