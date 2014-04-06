@@ -7,8 +7,8 @@ var expect = Lab.expect;
 var before = Lab.before;
 var after = Lab.after;
 
-var pools = require('../../../lib/connection/pools');
-var config = require('../../../.test-config');
+var pools = require('../../lib/pools');
+var config = require('../../.test-config');
 
 describe('pools tests', function () {
   it('should be able to initialize a pool with a valid configuration', function (done) {

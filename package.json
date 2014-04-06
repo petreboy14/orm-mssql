@@ -31,7 +31,8 @@
   },
   "dependencies": {
     "tedious": "^0.2.2",
-    "tedious-connection-pool": "^0.1.1",
-    "bucker": "^1.0.9"
+    "tedious-connection-pool": "https://github.com/pekim/tedious-connection-pool/tarball/master",
+    "bucker": "^1.0.9",
+    "joi": "^2.9.0"
   }
 }
