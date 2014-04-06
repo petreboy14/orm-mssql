@@ -4,7 +4,8 @@
   "description": "An ORM interface to MSSQL",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/lab/bin/lab"
+    "test": "GETCONFIG_ROOT=./ lab -G ./test",
+    "coverage": "GETCONFIG_ROOT=./ lab -G -c ./test"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
   },
   "dependencies": {
     "tedious": "^0.2.2",
-    "tedious-connection-pool": "^0.1.1"
+    "tedious-connection-pool": "^0.1.1",
+    "bucker": "^1.0.9"
   }
 }
