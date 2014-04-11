@@ -217,4 +217,15 @@ describe('Column tests', function () {
     should.not.exist(err);
     done();
   });
+
+  it('should be able to validate that a notNull column requires a value', function (done) {
+    var col = new Column({
+      type: Column.TYPES.NVarChar,
+      notNull: true
+    });
+    var schema = { val: col.validation };
+    var err = Joi.validate({ val: null }, schema);
+    should.exist(err);
+    done();
+  });
 });
