@@ -228,4 +228,17 @@ describe('Column tests', function () {
     should.exist(err);
     done();
   });
+
+  it('should allow users to specify an enum', function (done) {
+    var col = new Column({
+      type: Column.TYPES.NVarChar,
+      enum: ['foo', 'bar', 'test']
+    });
+    var schema = { val: col.validation };
+    var err = Joi.validate({ val: 'foo' }, schema);
+    should.not.exist(err);
+    err = Joi.validate({ val: 'asdsadsad' }, schema);
+    should.exist(err);
+    done();
+  });
 });
