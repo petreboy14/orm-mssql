@@ -241,4 +241,28 @@ describe('Column tests', function () {
     should.exist(err);
     done();
   });
+
+  it('should be able to set/get a value from a column', function (done) {
+    var col = new Column({
+      type: Column.TYPES.NVarChar,
+      enum: ['foo', 'bar', 'test']
+    });
+    col.set('foo');
+    var value = col.get();
+    value.should.equal('foo');
+    done();
+  });
+
+  it('should throw if the set value cannot be validated', function (done) {
+    var col = new Column({
+      type: Column.TYPES.NVarChar,
+      enum: ['foo', 'bar', 'test']
+    });
+    try {
+      col.set('asdsd');
+    } catch (err) {
+      should.exist(err);
+      done();
+    }
+  });
 });
