@@ -24,6 +24,8 @@ describe('Schema tests', function () {
         min: 2,
         max: 50
       }
+    }, {
+      name: 'People'
     });
     done();
   });
@@ -33,6 +35,21 @@ describe('Schema tests', function () {
       var schema = new Schema({
         name: {
           type: String,
+          min: 2,
+          ma: 50
+        }
+      });
+    } catch (err) {
+      should.exist(err);
+      done();
+    }
+  });
+
+  it('should throw an error on options which don\'t include a name', function (done) {
+    try {
+      var schema = new Schema({
+        name: {
+          type: Schema.Types.NVarChar,
           min: 2,
           ma: 50
         }
