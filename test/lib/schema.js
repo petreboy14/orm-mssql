@@ -27,4 +27,19 @@ describe('Schema tests', function () {
     });
     done();
   });
+
+  it('should throw an error on a bad type sent to schema creation', function (done) {
+    try {
+      var schema = new Schema({
+        name: {
+          type: String,
+          min: 2,
+          ma: 50
+        }
+      });
+    } catch (err) {
+      should.exist(err);
+      done();
+    }
+  });
 });
