@@ -51,7 +51,7 @@ describe('Schema tests', function () {
         name: {
           type: Schema.Types.NVarChar,
           min: 2,
-          ma: 50
+          max: 50
         }
       });
     } catch (err) {
