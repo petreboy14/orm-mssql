@@ -4,8 +4,7 @@
   "description": "An ORM interface to MSSQL",
   "main": "index.js",
   "scripts": {
-    "test": "GETCONFIG_ROOT=./ lab -G ./test",
-    "coverage": "GETCONFIG_ROOT=./ lab -G -c ./test"
+    "test": "node_modules/lab/bin/lab -c"
   },
   "repository": {
     "type": "git",

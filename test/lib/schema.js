@@ -59,4 +59,22 @@ describe('Schema tests', function () {
       done();
     }
   });
+
+  it('should be able to create a model based on the schema', function (done) {
+    var schema = new Schema({
+      name: {
+        type: Schema.Types.NVarChar,
+        min: 2,
+        max: 50
+      }
+    }, {
+      name: 'People'
+    });
+
+    var model = new schema.Model({
+      name: 'Peter Henning'
+    });
+
+    done();
+  });
 });
